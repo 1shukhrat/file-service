@@ -107,7 +107,6 @@ public class FileControllerTests {
 
         when(fileService.create(any(CreateFileRequest.class))).thenReturn(response);
 
-        // Выполняем запрос и проверяем результат
         mockMvc.perform(post("/api/files")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
